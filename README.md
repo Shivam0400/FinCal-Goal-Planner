@@ -155,17 +155,17 @@ http://localhost:3000
 
 #  Screenshots
 
-### Home Page
-
-(Add screenshot)
-
 ### Calculator
 
-(Add screenshot)
+![Home Page](public/screenshots/calculator_page.png)
 
-### Investment Result
+### Investment Result Page
 
-(Add screenshot)
+![Home Page](public/screenshots/Investment_Result.png)
+
+### Reports and Insights
+
+![Home Page](public/screenshots/reports.png)
 
 ---
 
@@ -193,11 +193,6 @@ http://localhost:3000
 
 This project was built as part of a **FinTech Hackathon** to demonstrate how technology can simplify personal financial planning.
 
----
-
-#  License
-
-This project is licensed under the **MIT License**.
 
 ---
 
