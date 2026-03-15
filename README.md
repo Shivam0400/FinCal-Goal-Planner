@@ -10,8 +10,9 @@ Built using **Next.js 14, React, TypeScript, TailwindCSS, and Chart.js**, FinCal
 
 # 🌐 Live Demo
 
-🔗 **Deployed on Vercel**
-https://your-vercel-link.vercel.app
+🔗 **Deployed on Vercel** 
+
+[FinCal Goal Calculator](https://fincalgoal-planner.vercel.app/)
 
 ---
 
