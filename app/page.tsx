@@ -1,65 +1,156 @@
-import Image from "next/image";
+"use client";
 
-export default function Home() {
-  return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
-  );
+import { useState } from "react";
+import Calculator from "../components/Calculator";
+import ResultChart from "../components/ResultChart";
+import StepIndicator from "../components/StepIndicator";
+import TeamModal from "../components/TeamModal";
+
+export default function Home(){
+
+const [values,setValues] = useState<any>({
+future:0,
+sip:0,
+years:10,
+returnRate:12
+});
+
+const [openTeam,setOpenTeam] = useState(false);
+
+const formatCurrency = (num:number)=>{
+return new Intl.NumberFormat('en-IN',{
+style:'currency',
+currency:'INR',
+maximumFractionDigits:0
+}).format(num);
+};
+
+return(
+
+<main className="min-h-screen bg-gradient-to-br from-[#0f172a] via-[#1e293b] to-[#020617] text-white px-6 py-14">
+
+<div className="max-w-7xl mx-auto">
+
+{/* HEADER */}
+
+<div className="text-center mb-14">
+
+<h1 className="text-5xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+FinCal Goal Planner
+</h1>
+
+<p className="text-gray-400 mt-3">
+Smart investment planning tool
+</p>
+
+</div>
+
+{/* TOP GRID */}
+
+<div className="grid lg:grid-cols-2 gap-10">
+
+{/* LEFT */}
+
+<div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-8 shadow-xl">
+
+<StepIndicator step={1}/>
+
+<Calculator setValues={setValues}/>
+
+</div>
+
+{/* RIGHT */}
+
+<div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-8 shadow-xl">
+
+<h2 className="text-xl font-semibold text-cyan-300 mb-4">
+Live Investment Projection
+</h2>
+
+<p className="text-gray-400 mb-6">
+Adjust sliders to see how your investment grows over time.
+</p>
+
+<h3 className="text-gray-300">
+Future Goal Value
+</h3>
+
+<p className="text-2xl sm:text-3xl font-bold">
+{formatCurrency(values.future)}
+</p>
+
+<h3 className="text-gray-300 mt-4">
+Required Monthly SIP
+</h3>
+
+<p className="text-xl text-cyan-300 font-semibold">
+{formatCurrency(values.sip)}
+</p>
+
+<div className="mt-6 bg-black/30 p-4 rounded-xl">
+
+<ResultChart
+future={values.future}
+years={values.years}
+sip={values.sip}
+returnRate={values.returnRate}
+/>
+
+</div>
+
+</div>
+
+</div>
+
+{/* BOTTOM SECTION */}
+
+<div className="mt-16 bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-10">
+
+<h2 className="text-2xl font-semibold text-cyan-300 mb-6">
+Why Goal Planning Matters
+</h2>
+
+<p className="text-gray-400 leading-relaxed max-w-4xl">
+Financial goals like buying a house, car, or funding education become
+more expensive over time due to inflation.
+This tool helps you estimate how much you should invest monthly through SIP to achieve your goals.
+</p>
+
+</div>
+
+{/* FOOTER */}
+
+<footer className="mt-20 border-t border-white/10 pt-8 pb-6 text-center">
+
+<h3 className="text-lg font-semibold text-cyan-300">
+FinCal Goal Planner
+</h3>
+
+<p className="text-gray-400 text-sm mt-2">
+Smart financial goal planning tool built for TECHNEX'26 Hackathon
+</p>
+
+<p className="text-gray-500 text-xs mt-4">
+© 2026 
+<span
+className="text-cyan-400 cursor-pointer hover:underline"
+onClick={()=>setOpenTeam(true)}
+>
+ Team QuantumFin
+</span>
+ — All Rights Reserved
+</p>
+
+</footer>
+
+{/* TEAM MODAL */}
+
+<TeamModal open={openTeam} setOpen={setOpenTeam}/>
+
+</div>
+
+</main>
+
+);
+
 }
