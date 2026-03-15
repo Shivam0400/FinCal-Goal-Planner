@@ -99,9 +99,13 @@ public/
 #  How It Works
 
 1️⃣ User enters financial goal details
+
 2️⃣ FinCal calculates future goal value considering inflation
+
 3️⃣ SIP required to reach the goal is computed
+
 4️⃣ Investment growth is visualized using charts
+
 5️⃣ User can download the financial report
 
 ---
@@ -172,9 +176,13 @@ http://localhost:3000
 #  Future Improvements
 
 • AI powered investment recommendations
+
 • Goal success probability analysis
+
 • Portfolio diversification suggestions
+
 • Real-time market return data integration
+
 • User login & investment tracking
 
 ---
@@ -184,8 +192,11 @@ http://localhost:3000
 **Team QuantumFin**
 
 • Shivam Sony – Frontend Development & Implementation
+
 • Shantanu Kumar – Financial Research & Strategy
+
 • Priyanshu Kumar - UI/UX Design Support
+
 
 ---
 
