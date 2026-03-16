@@ -16,13 +16,32 @@ Built using **Next.js 14, React, TypeScript, TailwindCSS, and Chart.js**, FinCal
 
 ---
 
+# 🎥 Project Demo Video
+
+Watch the working demo of **FinCal – Smart Goal Based Investment Planner**
+
+🔗 **Demo Video Link**  
+[Working Video](https://drive.google.com/file/d/1YeWxFXg6o1vyAt1EABBS7YQfSICmSU9p/view?usp=sharing)
+
+The video demonstrates:
+
+• Goal based SIP calculation  
+• Inflation adjusted financial planning  
+• Investment growth visualization  
+• Downloadable financial report  
+• Responsive fintech UI
+
+--- 
 #  Problem Statement
 
 Many people struggle with financial planning because they cannot easily estimate:
 
 • How much to invest monthly
+
 • The effect of inflation on future goals
+
 • How investments grow over time
+
 
 FinCal solves this by providing a **goal-based financial planning calculator** with real-time investment projections.
 
