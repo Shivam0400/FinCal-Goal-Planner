@@ -211,7 +211,7 @@ http://localhost:3000
 
 **Team QuantumFin**
 
-![Home Page](public/screenshots/Investment_Result.png)
+![Home Page](public/screenshots/team_members.png)
 
 • Shivam Sony – Frontend Development & Implementation
 
