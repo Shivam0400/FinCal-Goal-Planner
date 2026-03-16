@@ -211,6 +211,8 @@ http://localhost:3000
 
 **Team QuantumFin**
 
+![Home Page](public/screenshots/Investment_Result.png)
+
 • Shivam Sony – Frontend Development & Implementation
 
 • Shantanu Kumar – Financial Research & Strategy
